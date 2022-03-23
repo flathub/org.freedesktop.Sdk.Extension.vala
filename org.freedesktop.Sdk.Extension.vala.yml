@@ -37,6 +37,10 @@ modules:
             tag: dbus-1.13.22
         buildsystem: autotools
         cleanup: ['*']
+      - name: include-dir
+        buildsystem: simple
+        build-commands:
+          - mkdir -p /usr/lib/sdk/vala/include/
   - name: vls
     buildsystem: meson
     sources:
