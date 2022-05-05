@@ -10,7 +10,6 @@ build-options:
   prefix: /usr/lib/sdk/vala
   prepend-pkg-config-path: /usr/lib/sdk/vala/lib/pkgconfig/
   prepend-path: /usr/lib/sdk/vala/bin/
-  cppflags: -I/usr/lib/sdk/vala/include/
 cleanup:
   - /share/info
   - /share/man
@@ -27,6 +26,8 @@ modules:
           stable-only: true
           is-main-source: true
     run-tests: true
+    build-options:
+      cppflags: -I/usr/lib/sdk/vala/include/
     modules:
       - name: graphviz
         buildsystem: autotools
@@ -53,10 +54,6 @@ modules:
             commit: 6fd1509ba3677ac434176882fbf1ca5d7603651e
         buildsystem: autotools
         cleanup: ['*']
-      - name: include-dir
-        buildsystem: simple
-        build-commands:
-          - mkdir -p /usr/lib/sdk/vala/include/
   - name: vls
     buildsystem: meson
     sources:
