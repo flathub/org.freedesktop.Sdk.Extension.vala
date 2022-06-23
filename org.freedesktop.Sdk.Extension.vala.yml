@@ -33,8 +33,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://gitlab.com/graphviz/graphviz/-/archive/3.0.0/graphviz-3.0.0.tar.gz
-            sha256: 59931082a3638139e06c296b96e860a9d338432af06f7f57a6ad8da5cbf465c7
+            url: https://gitlab.com/graphviz/graphviz/-/archive/4.0.0/graphviz-4.0.0.tar.gz
+            sha256: 0cc99b81f9958f3909fd219ff6f70289d1d2719f4e633d5683428719919aa6f9
             x-checker-data:
               type: anitya
               project-id: 1249
@@ -59,13 +59,13 @@ modules:
     sources:
       - type: git
         url: https://github.com/Prince781/vala-language-server.git
-        tag: 0.48.4
+        tag: 0.48.5
         x-checker-data:
           type: anitya
           project-id: 242051
           stable-only: true
           tag-template: $version
-        commit: bbc824697b67d4db452ba7d43ade245902756d11
+        commit: b461b94dd5cf064500562d293de47ed11ae2f0ab
     build-options:
       env: {XDG_DATA_DIRS: /usr/lib/sdk/vala/share/}
     modules:
