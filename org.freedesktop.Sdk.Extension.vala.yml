@@ -18,8 +18,8 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.1.tar.xz
-        sha256: c518b81dfdda82d1cdf586b3f9b2323162cb96bd3cb5a2c03650cea025d91fb9
+        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.2.tar.xz
+        sha256: 66c9619bb17859fd1ac3aba0a57970613e38fd2a1ee30541174260c9fb90124c
         x-checker-data:
           type: gnome
           name: vala
@@ -33,8 +33,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://gitlab.com/graphviz/graphviz/-/archive/4.0.0/graphviz-4.0.0.tar.gz
-            sha256: 0cc99b81f9958f3909fd219ff6f70289d1d2719f4e633d5683428719919aa6f9
+            url: https://gitlab.com/graphviz/graphviz/-/archive/5.0.0/graphviz-5.0.0.tar.gz
+            sha256: f8cc576694ae93659f453b6b4a4c2f04572a90cfccdca2d4271f2e7c60bb3d60
             x-checker-data:
               type: anitya
               project-id: 1249
