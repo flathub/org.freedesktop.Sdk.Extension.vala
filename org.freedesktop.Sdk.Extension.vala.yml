@@ -43,29 +43,27 @@ modules:
         cleanup: [/include, '*.pc', /share/graphviz/doc]
       - name: dbus-run-session
         sources:
-          - type: git
-            url: https://gitlab.freedesktop.org/dbus/dbus
-            tag: dbus-1.14.0
+          - type: archive
+            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.0/dbus-dbus-1.14.0.tar.gz
+            sha256: 9725b6d7ad8c6f273dfc657d3b36e1897037e83c49ce1e9c5f7ca247a4c4fb95
             x-checker-data:
               type: anitya
               project-id: 5356
               stable-only: true
-              tag-template: dbus-$version
-            commit: 6fd1509ba3677ac434176882fbf1ca5d7603651e
+              url-template: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-$version/dbus-dbus-$version.tar.gz
         buildsystem: autotools
         cleanup: ['*']
   - name: vls
     buildsystem: meson
     sources:
-      - type: git
-        url: https://github.com/Prince781/vala-language-server.git
-        tag: 0.48.5
+      - type: archive
+        url: https://github.com/vala-lang/vala-language-server/releases/download/0.48.5/vala-language-server-0.48.5.tar.xz
+        sha256: 698a0f26b61a882517f31039e7dc8efdda1384de0687b1ab78f2a768c305b17e
         x-checker-data:
           type: anitya
           project-id: 242051
           stable-only: true
-          tag-template: $version
-        commit: b461b94dd5cf064500562d293de47ed11ae2f0ab
+          url-template: https://github.com/vala-lang/vala-language-server/releases/download/$version/vala-language-server-$version.tar.xz
     build-options:
       env: {XDG_DATA_DIRS: /usr/lib/sdk/vala/share/}
     modules:
