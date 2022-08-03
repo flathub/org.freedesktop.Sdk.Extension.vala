@@ -57,15 +57,14 @@ modules:
   - name: vls
     buildsystem: meson
     sources:
-      - type: git
-        url: https://github.com/Prince781/vala-language-server.git
-        tag: 0.48.5
+      - type: archive
+        url: https://github.com/vala-lang/vala-language-server/releases/download/0.48.5/vala-language-server-0.48.5.tar.xz
+        sha256: 698a0f26b61a882517f31039e7dc8efdda1384de0687b1ab78f2a768c305b17e
         x-checker-data:
           type: anitya
           project-id: 242051
           stable-only: true
-          tag-template: $version
-        commit: b461b94dd5cf064500562d293de47ed11ae2f0ab
+          url-template: https://github.com/vala-lang/vala-language-server/releases/download/$version/vala-language-server-$version.tar.xz
     build-options:
       env: {XDG_DATA_DIRS: /usr/lib/sdk/vala/share/}
     modules:
