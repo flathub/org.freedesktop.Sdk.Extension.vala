@@ -33,8 +33,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://gitlab.com/graphviz/graphviz/-/archive/5.0.1/graphviz-5.0.1.tar.gz
-            sha256: 6c704a3ffeaf2f7ae63f7d0da453cd624d93a9306a2e5dbda07e5ec38343d2b8
+            url: https://gitlab.com/graphviz/graphviz/-/archive/6.0.0/graphviz-6.0.0.tar.gz
+            sha256: f9cfdb9081b7eec9bc4aea6942594d46bdfcf65bd672fbb8b83d46fe43f40890
             x-checker-data:
               type: anitya
               project-id: 1249
