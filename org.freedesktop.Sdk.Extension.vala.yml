@@ -44,8 +44,8 @@ modules:
       - name: dbus-run-session
         sources:
           - type: archive
-            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.0/dbus-dbus-1.14.0.tar.gz
-            sha256: 9725b6d7ad8c6f273dfc657d3b36e1897037e83c49ce1e9c5f7ca247a4c4fb95
+            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.0/dbus-dbus-1.15.0.tar.gz
+            sha256: 63be34bddb864cd6f5cb19be1adc21157577fb8b3e1614f51fa7b349fa16149e
             x-checker-data:
               type: anitya
               project-id: 5356
