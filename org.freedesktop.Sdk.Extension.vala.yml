@@ -13,6 +13,16 @@ build-options:
 cleanup:
   - /share/info
   - /share/man
+  - /share/doc
+  - /share/gir-1.0
+  - /lib/girepository-1.0
+  - /share/aclocal
+  - /include
+  - /lib/pkgconfig
+  - '*.la'
+  - /share/vala/Makefile.vapigen
+  - '/lib/libgvpr.so*'
+  - /share/graphviz/gvpr
 modules:
   - name: valac
     buildsystem: autotools
@@ -40,7 +50,7 @@ modules:
               project-id: 1249
               stable-only: true
               url-template: https://gitlab.com/graphviz/graphviz/-/archive/$version/graphviz-$version.tar.gz
-        cleanup: [/include, '*.pc', /share/graphviz/doc]
+        cleanup: [/share/graphviz/doc, /bin]
       - name: dbus-run-session
         sources:
           - type: archive
@@ -77,7 +87,6 @@ modules:
               type: gnome
               name: jsonrpc-glib
               stable-only: true
-        cleanup: [/include, '*.pc', '*.gir', '*.typelib']
       - name: gee
         buildsystem: autotools
         sources:
