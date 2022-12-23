@@ -33,8 +33,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://gitlab.com/graphviz/graphviz/-/archive/6.0.1/graphviz-6.0.1.tar.gz
-            sha256: 92a5cabb71c2610ffb713f0da7ee595fa143f3fae5eaff172927dd27355d9775
+            url: https://gitlab.com/graphviz/graphviz/-/archive/7.0.5/graphviz-7.0.5.tar.gz
+            sha256: 8ec9ada2159ef530defba608ad9b9fa569b58d44f4781a34eee5c2601c3e5b61
             x-checker-data:
               type: anitya
               project-id: 1249
@@ -44,8 +44,8 @@ modules:
       - name: dbus-run-session
         sources:
           - type: archive
-            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.0/dbus-dbus-1.14.0.tar.gz
-            sha256: 9725b6d7ad8c6f273dfc657d3b36e1897037e83c49ce1e9c5f7ca247a4c4fb95
+            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.2/dbus-dbus-1.15.2.tar.gz
+            sha256: d2a0803025714e9138f4c2bbf1c858a7615ba84041663840b987ac3750b3555e
             x-checker-data:
               type: anitya
               project-id: 5356
