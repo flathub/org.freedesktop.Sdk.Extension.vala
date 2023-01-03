@@ -74,6 +74,8 @@ modules:
           project-id: 242051
           stable-only: true
           url-template: https://github.com/vala-lang/vala-language-server/releases/download/$version/vala-language-server-$version.tar.xz
+      - type: patch
+        path: fix-codegen-bug-in-render_gtk_doc_comment-272.patch
     build-options:
       env: {XDG_DATA_DIRS: /usr/lib/sdk/vala/share/}
     modules:

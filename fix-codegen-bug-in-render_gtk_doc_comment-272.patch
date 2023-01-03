@@ -1,0 +1,26 @@
+From bf978c0cda97cff946f355477ec8da08b1cb4e5e Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Aleks=20R=C5=ABti=C5=86=C5=A1?= <aleks@rutins.com>
+Date: Tue, 8 Nov 2022 23:16:03 -0500
+Subject: [PATCH] fix codegen bug in render_gtk_doc_comment (#272)
+
+Closes #259
+---
+ src/documentation/girdocumentation.vala | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/documentation/girdocumentation.vala b/src/documentation/girdocumentation.vala
+index 36e8b7d7..04b9f01d 100644
+--- a/src/documentation/girdocumentation.vala
++++ b/src/documentation/girdocumentation.vala
+@@ -280,7 +280,7 @@ class Vls.GirDocumentation {
+      * see [[https://developer.gnome.org/gtk-doc-manual/stable/documenting_syntax.html.en]]
+      */
+     public string render_gtk_doc_content (string content, Vala.Comment comment, Compilation compilation) throws GLib.RegexError {
+-        string comment_data = content;  // FIXME: workaround for valac codegen bug
++        string comment_data = content.dup();  // FIXME: workaround for valac codegen bug
+ 
+         // replace code blocks
+         comment_data = /\|\[(<!-- language="(\w+)" -->)?((.|\s)*?)\]\|/
+-- 
+2.39.0
+
