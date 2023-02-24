@@ -57,8 +57,8 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://github.com/vala-lang/vala-language-server/releases/download/0.48.5/vala-language-server-0.48.5.tar.xz
-        sha256: 698a0f26b61a882517f31039e7dc8efdda1384de0687b1ab78f2a768c305b17e
+        url: https://github.com/vala-lang/vala-language-server/releases/download/0.48.6/vala-language-server-0.48.6.tar.xz
+        sha256: 8339429801bedb3436cb5c64721f22f9529f2af02c16ba5937d0b0c9ceaabf27
         x-checker-data:
           type: anitya
           project-id: 242051
