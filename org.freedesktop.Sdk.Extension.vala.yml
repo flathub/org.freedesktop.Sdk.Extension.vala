@@ -18,8 +18,8 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.4.tar.xz
-        sha256: 862c41d938543ed3d8d86c8219a61087797193defee8da0c50caf49993c66b6a
+        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.5.tar.xz
+        sha256: 2b4292e7301de5fe904e67618116bc4027f60130a242b4a2228a295e6357b48c
         x-checker-data:
           type: gnome
           name: vala
@@ -33,8 +33,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://gitlab.com/graphviz/graphviz/-/archive/7.1.0/graphviz-7.1.0.tar.gz
-            sha256: 8b28a283644a8442e6925b15d95055228d25172c7c30681810625616cbb23913
+            url: https://gitlab.com/graphviz/graphviz/-/archive/8.0.1/graphviz-8.0.1.tar.gz
+            sha256: 0d60ffb256ed2b365abf5c50e9299bcc0c27b9e8ea4a02ed4cc42aa540ad3c13
             x-checker-data:
               type: anitya
               project-id: 1249
@@ -71,8 +71,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/jsonrpc-glib/3.42/jsonrpc-glib-3.42.0.tar.xz
-            sha256: 221989a57ca82a12467dc427822cd7651b0cad038140c931027bf1074208276b
+            url: https://download.gnome.org/sources/jsonrpc-glib/3.44/jsonrpc-glib-3.44.0.tar.xz
+            sha256: 69406a0250d0cc5175408cae7eca80c0c6bfaefc4ae1830b354c0433bcd5ce06
             x-checker-data:
               type: gnome
               name: jsonrpc-glib
