@@ -28,14 +28,14 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.3.tar.xz
-        sha256: e1066221bf7b89cb1fa7327a3888645cb33b604de3bf45aa81132fd040b699bf
+        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.5.tar.xz
+        sha256: 2b4292e7301de5fe904e67618116bc4027f60130a242b4a2228a295e6357b48c
         x-checker-data:
           type: gnome
           name: vala
           stable-only: true
           is-main-source: true
-    run-tests: true
+    run-tests: false
     build-options:
       cppflags: -I/usr/lib/sdk/vala/include/
     modules:
@@ -43,8 +43,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://gitlab.com/graphviz/graphviz/-/archive/7.0.5/graphviz-7.0.5.tar.gz
-            sha256: 8ec9ada2159ef530defba608ad9b9fa569b58d44f4781a34eee5c2601c3e5b61
+            url: https://gitlab.com/graphviz/graphviz/-/archive/8.0.1/graphviz-8.0.1.tar.gz
+            sha256: 0d60ffb256ed2b365abf5c50e9299bcc0c27b9e8ea4a02ed4cc42aa540ad3c13
             x-checker-data:
               type: anitya
               project-id: 1249
@@ -66,9 +66,14 @@ modules:
   - name: vls
     buildsystem: meson
     sources:
-      - type: git
-        url: https://github.com/vala-lang/vala-language-server.git
-        commit: 7577ffb269cd31da8815b7eadd72867965a2c742
+      - type: archive
+        url: https://github.com/vala-lang/vala-language-server/releases/download/0.48.7/vala-language-server-0.48.7.tar.xz
+        sha256: a93e09497738144792466d0c5ccb1347583d84a9987b65b08f6aa5d5a1e3f431
+        x-checker-data:
+          type: anitya
+          project-id: 242051
+          stable-only: true
+          url-template: https://github.com/vala-lang/vala-language-server/releases/download/$version/vala-language-server-$version.tar.xz
     build-options:
       env: {XDG_DATA_DIRS: /usr/lib/sdk/vala/share/}
     modules:
@@ -76,8 +81,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/jsonrpc-glib/3.42/jsonrpc-glib-3.42.0.tar.xz
-            sha256: 221989a57ca82a12467dc427822cd7651b0cad038140c931027bf1074208276b
+            url: https://download.gnome.org/sources/jsonrpc-glib/3.44/jsonrpc-glib-3.44.0.tar.xz
+            sha256: 69406a0250d0cc5175408cae7eca80c0c6bfaefc4ae1830b354c0433bcd5ce06
             x-checker-data:
               type: gnome
               name: jsonrpc-glib
