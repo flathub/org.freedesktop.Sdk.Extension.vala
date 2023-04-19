@@ -21,15 +21,15 @@ cleanup:
   - /lib/pkgconfig
   - '*.la'
   - /share/vala/Makefile.vapigen
-  - '/lib/libgvpr.so*'
+  - /lib/libgvpr.so*
   - /share/graphviz/gvpr
 modules:
   - name: valac
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.6.tar.xz
-        sha256: 050e841cbfe2b8e7d0fb350c9506bd7557be1cd86a90c896765f1a09a1870013
+        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.7.tar.xz
+        sha256: 3d39c7596d5fa9ae8bfeae476669f811f7057b7f7b9308478a27b68443d8b003
         x-checker-data:
           type: gnome
           name: vala
@@ -43,8 +43,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://gitlab.com/graphviz/graphviz/-/archive/8.0.1/graphviz-8.0.1.tar.gz
-            sha256: 0d60ffb256ed2b365abf5c50e9299bcc0c27b9e8ea4a02ed4cc42aa540ad3c13
+            url: https://gitlab.com/graphviz/graphviz/-/archive/8.0.3/graphviz-8.0.3.tar.gz
+            sha256: d47ccf2d52676a704d659bbf3e312587a581743ddee6bd707657bd27f2797453
             x-checker-data:
               type: anitya
               project-id: 1249
@@ -54,8 +54,8 @@ modules:
       - name: dbus-run-session
         sources:
           - type: archive
-            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.15.2/dbus-dbus-1.15.2.tar.gz
-            sha256: d2a0803025714e9138f4c2bbf1c858a7615ba84041663840b987ac3750b3555e
+            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.6/dbus-dbus-1.14.6.tar.gz
+            sha256: 2533742eb324fa7fbb093a3ed0ff436c7eb11861fd6a31e9b857fc4878f01831
             x-checker-data:
               type: anitya
               project-id: 5356
@@ -100,7 +100,7 @@ modules:
       - name: uncrustify
         buildsystem: cmake-ninja
         config-opts:
-          - '-DCMAKE_BUILD_TYPE=Release'
+          - -DCMAKE_BUILD_TYPE=Release
         builddir: true
         sources:
           - type: archive
