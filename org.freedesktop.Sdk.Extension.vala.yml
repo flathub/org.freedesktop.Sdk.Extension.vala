@@ -1,9 +1,9 @@
 id: org.freedesktop.Sdk.Extension.vala
-branch: '22.08'
+branch: '23.08beta'
 runtime: org.freedesktop.Sdk
 build-extension: true
 sdk: org.freedesktop.Sdk
-runtime-version: '22.08'
+runtime-version: '23.08beta'
 separate-locales: false
 appstream-compose: false
 build-options:
