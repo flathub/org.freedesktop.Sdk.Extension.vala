@@ -1,4 +1,5 @@
 {
   "automerge-flathubbot-prs": false,
-  "skip-icons-check": true
+  "skip-icons-check": true,
+  "require-important-updates": true
 }
