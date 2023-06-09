@@ -1,9 +1,9 @@
 id: org.freedesktop.Sdk.Extension.vala
-branch: '22.08beta'
+branch: '23.08beta'
 runtime: org.freedesktop.Sdk
 build-extension: true
 sdk: org.freedesktop.Sdk
-runtime-version: '22.08beta'
+runtime-version: '23.08beta'
 separate-locales: false
 appstream-compose: false
 build-options:
@@ -13,19 +13,30 @@ build-options:
 cleanup:
   - /share/info
   - /share/man
+  - /share/doc
+  - /share/gir-1.0
+  - /lib/girepository-1.0
+  - /share/aclocal
+  - /include
+  - /lib/pkgconfig
+  - '*.la'
+  - /share/vala/Makefile.vapigen
+  - /lib/libgvpr.so*
+  - /share/graphviz/gvpr
 modules:
   - name: valac
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.2.tar.xz
-        sha256: 66c9619bb17859fd1ac3aba0a57970613e38fd2a1ee30541174260c9fb90124c
+        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.8.tar.xz
+        sha256: 93f81dcfc6a93b77baa271d65e6be981ee3238ad451ef380af118e295d904bde
         x-checker-data:
           type: gnome
           name: vala
           stable-only: true
           is-main-source: true
-    run-tests: true
+          is-important: true
+    run-tests: false
     build-options:
       cppflags: -I/usr/lib/sdk/vala/include/
     modules:
@@ -33,19 +44,19 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://gitlab.com/graphviz/graphviz/-/archive/5.0.0/graphviz-5.0.0.tar.gz
-            sha256: f8cc576694ae93659f453b6b4a4c2f04572a90cfccdca2d4271f2e7c60bb3d60
+            url: https://gitlab.com/graphviz/graphviz/-/archive/8.0.5/graphviz-8.0.5.tar.gz
+            sha256: dd06f45f5bbcb1c7cbc67adab5359da2cd4b40533dc7c7424b3fc0e998bbd6c9
             x-checker-data:
               type: anitya
               project-id: 1249
               stable-only: true
               url-template: https://gitlab.com/graphviz/graphviz/-/archive/$version/graphviz-$version.tar.gz
-        cleanup: [/include, '*.pc', /share/graphviz/doc]
+        cleanup: [/share/graphviz/doc, /bin]
       - name: dbus-run-session
         sources:
           - type: archive
-            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.0/dbus-dbus-1.14.0.tar.gz
-            sha256: 9725b6d7ad8c6f273dfc657d3b36e1897037e83c49ce1e9c5f7ca247a4c4fb95
+            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.6/dbus-dbus-1.14.6.tar.gz
+            sha256: 2533742eb324fa7fbb093a3ed0ff436c7eb11861fd6a31e9b857fc4878f01831
             x-checker-data:
               type: anitya
               project-id: 5356
@@ -57,13 +68,14 @@ modules:
     buildsystem: meson
     sources:
       - type: archive
-        url: https://github.com/vala-lang/vala-language-server/releases/download/0.48.5/vala-language-server-0.48.5.tar.xz
-        sha256: 698a0f26b61a882517f31039e7dc8efdda1384de0687b1ab78f2a768c305b17e
+        url: https://github.com/vala-lang/vala-language-server/releases/download/0.48.7/vala-language-server-0.48.7.tar.xz
+        sha256: a93e09497738144792466d0c5ccb1347583d84a9987b65b08f6aa5d5a1e3f431
         x-checker-data:
           type: anitya
           project-id: 242051
           stable-only: true
           url-template: https://github.com/vala-lang/vala-language-server/releases/download/$version/vala-language-server-$version.tar.xz
+          is-important: true
     build-options:
       env: {XDG_DATA_DIRS: /usr/lib/sdk/vala/share/}
     modules:
@@ -71,23 +83,31 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/jsonrpc-glib/3.42/jsonrpc-glib-3.42.0.tar.xz
-            sha256: 221989a57ca82a12467dc427822cd7651b0cad038140c931027bf1074208276b
+            url: https://download.gnome.org/sources/jsonrpc-glib/3.44/jsonrpc-glib-3.44.0.tar.xz
+            sha256: 69406a0250d0cc5175408cae7eca80c0c6bfaefc4ae1830b354c0433bcd5ce06
             x-checker-data:
               type: gnome
               name: jsonrpc-glib
               stable-only: true
-        cleanup: [/include, '*.pc', '*.gir', '*.typelib']
       - name: gee
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/libgee/0.20/libgee-0.20.5.tar.xz
-            sha256: 31863a8957d5a727f9067495cabf0a0889fa5d3d44626e54094331188d5c1518
+            url: https://download.gnome.org/sources/libgee/0.20/libgee-0.20.6.tar.xz
+            sha256: 1bf834f5e10d60cc6124d74ed3c1dd38da646787fbf7872220b8b4068e476d4d
             x-checker-data:
               type: gnome
               name: libgee
               stable-only: true
+      - name: uncrustify
+        buildsystem: cmake-ninja
+        config-opts:
+          - -DCMAKE_BUILD_TYPE=Release
+        builddir: true
+        sources:
+          - type: archive
+            url: https://github.com/uncrustify/uncrustify/archive/uncrustify-0.75.1.tar.gz
+            sha256: fd14acc0a31ed88b33137bdc26d32964327488c835f885696473ef07caf2e182
   - name: scripts
     buildsystem: simple
     sources:
