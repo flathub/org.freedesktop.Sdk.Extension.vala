@@ -16,7 +16,6 @@ cleanup:
   - /share/doc
   - /share/gir-1.0
   - /lib/girepository-1.0
-  - /share/aclocal
   - /include
   - /lib/pkgconfig
   - '*.la'
