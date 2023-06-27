@@ -17,7 +17,6 @@ cleanup:
   - /share/gir-1.0
   - /lib/girepository-1.0
   - /include
-  - /lib/pkgconfig
   - '*.la'
   - /share/vala/Makefile.vapigen
   - /lib/libgvpr.so*
@@ -50,7 +49,7 @@ modules:
               project-id: 1249
               stable-only: true
               url-template: https://gitlab.com/graphviz/graphviz/-/archive/$version/graphviz-$version.tar.gz
-        cleanup: [/share/graphviz/doc, /bin]
+        cleanup: [/share/graphviz/doc, /bin, /lib/pkgconfig]
       - name: dbus-run-session
         sources:
           - type: archive
@@ -88,6 +87,7 @@ modules:
               type: gnome
               name: jsonrpc-glib
               stable-only: true
+        cleanup: [/lib/pkgconfig]
       - name: gee
         buildsystem: autotools
         sources:
@@ -98,6 +98,7 @@ modules:
               type: gnome
               name: libgee
               stable-only: true
+        cleanup: [/lib/pkgconfig]
       - name: uncrustify
         buildsystem: cmake-ninja
         config-opts:
@@ -107,6 +108,7 @@ modules:
           - type: archive
             url: https://github.com/uncrustify/uncrustify/archive/uncrustify-0.75.1.tar.gz
             sha256: fd14acc0a31ed88b33137bdc26d32964327488c835f885696473ef07caf2e182
+        cleanup: [/lib/pkgconfig]
   - name: scripts
     buildsystem: simple
     sources:
