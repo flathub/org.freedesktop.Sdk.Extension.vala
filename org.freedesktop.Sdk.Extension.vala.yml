@@ -54,8 +54,8 @@ modules:
       - name: dbus-run-session
         sources:
           - type: archive
-            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.8/dbus-dbus-1.14.8.tar.gz
-            sha256: 273718fe5150a1a44fe77abcf442dc64082f7375fdc15fcbd80b84316f897326
+            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.10/dbus-dbus-1.14.10.tar.gz
+            sha256: 5fedcd6c17fbc62646af224e1aab11a334c463e7e7d89163a670ed24e7ab241c
             x-checker-data:
               type: anitya
               project-id: 5356
@@ -110,8 +110,8 @@ modules:
         builddir: true
         sources:
           - type: archive
-            url: https://github.com/uncrustify/uncrustify/archive/uncrustify-0.75.1.tar.gz
-            sha256: fd14acc0a31ed88b33137bdc26d32964327488c835f885696473ef07caf2e182
+            url: https://github.com/uncrustify/uncrustify/archive/uncrustify-0.77.1.tar.gz
+            sha256: 414bbc9f7860eb18a53074f9af14ed04638a633b2216a73f2629291300d37c1b
             x-checker-data:
               type: anitya
               project-id: 5043
