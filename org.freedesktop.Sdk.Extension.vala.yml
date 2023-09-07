@@ -49,6 +49,7 @@ modules:
               project-id: 1249
               stable-only: true
               url-template: https://gitlab.com/graphviz/graphviz/-/archive/$version/graphviz-$version.tar.gz
+              is-important: false
         cleanup: [/share/graphviz/doc, /bin, /lib/pkgconfig]
       - name: dbus-run-session
         sources:
@@ -60,6 +61,7 @@ modules:
               project-id: 5356
               stable-only: true
               url-template: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-$version/dbus-dbus-$version.tar.gz
+              is-important: false
         buildsystem: autotools
         cleanup: ['*']
   - name: vls
@@ -87,6 +89,7 @@ modules:
               type: gnome
               name: jsonrpc-glib
               stable-only: true
+              is-important: false
         cleanup: [/lib/pkgconfig]
       - name: gee
         buildsystem: autotools
@@ -98,6 +101,7 @@ modules:
               type: gnome
               name: libgee
               stable-only: true
+              is-important: false
         cleanup: [/lib/pkgconfig]
       - name: uncrustify
         buildsystem: cmake-ninja
@@ -108,6 +112,12 @@ modules:
           - type: archive
             url: https://github.com/uncrustify/uncrustify/archive/uncrustify-0.75.1.tar.gz
             sha256: fd14acc0a31ed88b33137bdc26d32964327488c835f885696473ef07caf2e182
+            x-checker-data:
+              type: anitya
+              project-id: 5043
+              stable-only: true
+              url-template: https://github.com/uncrustify/uncrustify/archive/uncrustify-$version.tar.gz
+              is-important: false
         cleanup: [/lib/pkgconfig]
   - name: scripts
     buildsystem: simple
