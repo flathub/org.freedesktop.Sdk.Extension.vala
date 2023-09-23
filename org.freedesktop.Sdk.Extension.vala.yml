@@ -26,8 +26,8 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.8.tar.xz
-        sha256: 93f81dcfc6a93b77baa271d65e6be981ee3238ad451ef380af118e295d904bde
+        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.9.tar.xz
+        sha256: 55578c7c4f067ace028e541806af240f8084cb6ff0cc554caa8ac08cbf8bce2f
         x-checker-data:
           type: gnome
           name: vala
@@ -53,8 +53,8 @@ modules:
       - name: dbus-run-session
         sources:
           - type: archive
-            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.6/dbus-dbus-1.14.6.tar.gz
-            sha256: 2533742eb324fa7fbb093a3ed0ff436c7eb11861fd6a31e9b857fc4878f01831
+            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.8/dbus-dbus-1.14.8.tar.gz
+            sha256: 273718fe5150a1a44fe77abcf442dc64082f7375fdc15fcbd80b84316f897326
             x-checker-data:
               type: anitya
               project-id: 5356
