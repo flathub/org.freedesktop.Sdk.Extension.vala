@@ -1,9 +1,9 @@
 id: org.freedesktop.Sdk.Extension.vala
-branch: '23.08beta'
+branch: '24.08beta'
 runtime: org.freedesktop.Sdk
 build-extension: true
 sdk: org.freedesktop.Sdk
-runtime-version: '23.08beta'
+runtime-version: '24.08beta'
 separate-locales: false
 appstream-compose: false
 build-options:
@@ -26,8 +26,8 @@ modules:
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.8.tar.xz
-        sha256: 93f81dcfc6a93b77baa271d65e6be981ee3238ad451ef380af118e295d904bde
+        url: https://download.gnome.org/sources/vala/0.56/vala-0.56.17.tar.xz
+        sha256: 26100c4e4ef0049c619275f140d97cf565883d00c7543c82bcce5a426934ed6a
         x-checker-data:
           type: gnome
           name: vala
@@ -42,24 +42,26 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://gitlab.com/graphviz/graphviz/-/archive/8.0.5/graphviz-8.0.5.tar.gz
-            sha256: dd06f45f5bbcb1c7cbc67adab5359da2cd4b40533dc7c7424b3fc0e998bbd6c9
+            url: https://gitlab.com/graphviz/graphviz/-/archive/10.0.1/graphviz-10.0.1.tar.gz
+            sha256: 28f452ef1cb12288c8758a62f8c3fcfefdb91b251f7aae61d0d703f851bde931
             x-checker-data:
               type: anitya
               project-id: 1249
               stable-only: true
               url-template: https://gitlab.com/graphviz/graphviz/-/archive/$version/graphviz-$version.tar.gz
+              is-important: false
         cleanup: [/share/graphviz/doc, /bin, /lib/pkgconfig]
       - name: dbus-run-session
         sources:
           - type: archive
-            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.6/dbus-dbus-1.14.6.tar.gz
-            sha256: 2533742eb324fa7fbb093a3ed0ff436c7eb11861fd6a31e9b857fc4878f01831
+            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.10/dbus-dbus-1.14.10.tar.gz
+            sha256: 5fedcd6c17fbc62646af224e1aab11a334c463e7e7d89163a670ed24e7ab241c
             x-checker-data:
               type: anitya
               project-id: 5356
               stable-only: true
               url-template: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-$version/dbus-dbus-$version.tar.gz
+              is-important: false
         buildsystem: autotools
         cleanup: ['*']
   - name: vls
@@ -87,9 +89,13 @@ modules:
               type: gnome
               name: jsonrpc-glib
               stable-only: true
+              is-important: false
         cleanup: [/lib/pkgconfig]
       - name: gee
         buildsystem: autotools
+        build-options:
+          # GCC 14 doesn't like this libgee release
+          cflags: -Wno-error=incompatible-pointer-types
         sources:
           - type: archive
             url: https://download.gnome.org/sources/libgee/0.20/libgee-0.20.6.tar.xz
@@ -98,6 +104,7 @@ modules:
               type: gnome
               name: libgee
               stable-only: true
+              is-important: false
         cleanup: [/lib/pkgconfig]
       - name: uncrustify
         buildsystem: cmake-ninja
@@ -106,8 +113,14 @@ modules:
         builddir: true
         sources:
           - type: archive
-            url: https://github.com/uncrustify/uncrustify/archive/uncrustify-0.75.1.tar.gz
-            sha256: fd14acc0a31ed88b33137bdc26d32964327488c835f885696473ef07caf2e182
+            url: https://github.com/uncrustify/uncrustify/archive/uncrustify-0.78.1.tar.gz
+            sha256: ecaf4c0adca14c36dfffa30bc28e69865115ecd602c90eb16a8cddccb41caad2
+            x-checker-data:
+              type: anitya
+              project-id: 5043
+              stable-only: true
+              url-template: https://github.com/uncrustify/uncrustify/archive/uncrustify-$version.tar.gz
+              is-important: false
         cleanup: [/lib/pkgconfig]
   - name: scripts
     buildsystem: simple
@@ -127,6 +140,4 @@ modules:
     build-commands:
       - mkdir -p ${FLATPAK_DEST}/share/metainfo
       - cp ${FLATPAK_ID}.appdata.xml ${FLATPAK_DEST}/share/metainfo
-      - appstream-compose --basename ${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak
-        ${FLATPAK_ID}
-
+      - appstreamcli compose --components=${FLATPAK_ID} --prefix=/ --origin=${FLATPAK_ID} --result-root=${FLATPAK_DEST} --data-dir=${FLATPAK_DEST}/share/app-info/xmls ${FLATPAK_DEST}

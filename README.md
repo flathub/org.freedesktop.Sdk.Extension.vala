@@ -14,7 +14,7 @@ add these lines to your Manifest:
 
 ```
 "sdk-extensions" : [
-    "org.freedektop.Sdk.Extension.vala"
+    "org.freedesktop.Sdk.Extension.vala"
 ]
 ...
 "build-options" : {
