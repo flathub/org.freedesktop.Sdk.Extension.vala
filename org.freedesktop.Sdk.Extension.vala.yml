@@ -5,7 +5,6 @@ build-extension: true
 sdk: org.freedesktop.Sdk
 runtime-version: '24.08'
 separate-locales: false
-appstream-compose: false
 build-options:
   prefix: /usr/lib/sdk/vala
   prepend-pkg-config-path: /usr/lib/sdk/vala/lib/pkgconfig/
@@ -140,4 +139,4 @@ modules:
     build-commands:
       - mkdir -p ${FLATPAK_DEST}/share/metainfo
       - cp ${FLATPAK_ID}.appdata.xml ${FLATPAK_DEST}/share/metainfo
-      - appstreamcli compose --components=${FLATPAK_ID} --prefix=/ --origin=${FLATPAK_ID} --result-root=${FLATPAK_DEST} --data-dir=${FLATPAK_DEST}/share/app-info/xmls ${FLATPAK_DEST}
+
