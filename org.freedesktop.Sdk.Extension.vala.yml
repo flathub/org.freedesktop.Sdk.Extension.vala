@@ -137,6 +137,5 @@ modules:
       - type: file
         path: org.freedesktop.Sdk.Extension.vala.appdata.xml
     build-commands:
-      - mkdir -p ${FLATPAK_DEST}/share/metainfo
-      - cp ${FLATPAK_ID}.appdata.xml ${FLATPAK_DEST}/share/metainfo
+      - install -Dm0644 ${FLATPAK_ID}.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
 
