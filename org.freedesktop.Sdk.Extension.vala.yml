@@ -53,8 +53,8 @@ modules:
       - name: dbus-run-session
         sources:
           - type: archive
-            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.14.10/dbus-dbus-1.14.10.tar.gz
-            sha256: 5fedcd6c17fbc62646af224e1aab11a334c463e7e7d89163a670ed24e7ab241c
+            url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.16.0/dbus-dbus-1.16.0.tar.gz
+            sha256: d2ca9d958c830e762ba70aea8e6b5c29fa7b58d0fee8ddd9bb5a00f35106ab57
             x-checker-data:
               type: anitya
               project-id: 5356
@@ -82,8 +82,8 @@ modules:
         buildsystem: meson
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/jsonrpc-glib/3.44/jsonrpc-glib-3.44.0.tar.xz
-            sha256: 69406a0250d0cc5175408cae7eca80c0c6bfaefc4ae1830b354c0433bcd5ce06
+            url: https://download.gnome.org/sources/jsonrpc-glib/3.44/jsonrpc-glib-3.44.1.tar.xz
+            sha256: 1361d17e9c805646afe5102e59baf8ca450238600fcabd01586c654b78bb30df
             x-checker-data:
               type: gnome
               name: jsonrpc-glib
@@ -97,8 +97,8 @@ modules:
           cflags: -Wno-error=incompatible-pointer-types
         sources:
           - type: archive
-            url: https://download.gnome.org/sources/libgee/0.20/libgee-0.20.6.tar.xz
-            sha256: 1bf834f5e10d60cc6124d74ed3c1dd38da646787fbf7872220b8b4068e476d4d
+            url: https://download.gnome.org/sources/libgee/0.20/libgee-0.20.8.tar.xz
+            sha256: 189815ac143d89867193b0c52b7dc31f3aa108a15f04d6b5dca2b6adfad0b0ee
             x-checker-data:
               type: gnome
               name: libgee
