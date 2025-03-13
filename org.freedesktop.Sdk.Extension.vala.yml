@@ -51,6 +51,7 @@ modules:
               is-important: false
         cleanup: [/share/graphviz/doc, /bin, /lib/pkgconfig]
       - name: dbus-run-session
+        buildsystem: meson
         sources:
           - type: archive
             url: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.16.2/dbus-dbus-1.16.2.tar.gz
@@ -61,7 +62,6 @@ modules:
               stable-only: true
               url-template: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-$version/dbus-dbus-$version.tar.gz
               is-important: false
-        buildsystem: autotools
         cleanup: ['*']
   - name: vls
     buildsystem: meson
