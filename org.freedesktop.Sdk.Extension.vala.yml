@@ -62,6 +62,18 @@ modules:
               stable-only: true
               url-template: https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-$version/dbus-dbus-$version.tar.gz
               is-important: false
+        config-opts:
+          - -Dlibaudit=disabled
+          - -Dducktype_docs=disabled",
+          - -Dqt_help=disabled",
+          - -Dmodular_tests=disabled",
+          - -Drelocation=disabled",
+          - -Dselinux=disabled",
+          - -Dkqueue=disabled",
+          - -Dlaunchd=disabled",
+          - -Dx11_autolaunch=disabled",
+          - -Dsystemd_system_unitdir=/app/lib/systemd/system",
+          - -Dsystemd_user_unitdir=/app/lib/systemd/user"
         cleanup: ['*']
   - name: vls
     buildsystem: meson
