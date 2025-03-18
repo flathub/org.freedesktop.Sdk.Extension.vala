@@ -2,12 +2,8 @@
 <!-- Copyright 2022 Lorenz Wildberg <lorenz@wild-fisch.de> -->
 <component type="addon">
   <extends>org.freedesktop.Sdk</extends>
-  <id>
-    org.freedesktop.Sdk.Extension.vala
-  </id>
-  <metadata_license>
-    CC0-1.0
-  </metadata_license>
+  <id>org.freedesktop.Sdk.Extension.vala</id>
+  <metadata_license>CC0-1.0</metadata_license>
   <name>
     Vala Sdk extension
   </name>
@@ -19,16 +15,13 @@
       Vala is a programming language using modern high level abstractions without imposing additional runtime requirements and without using a different ABI compared to applications and libraries written in C. Vala uses the GObject type system and has additional code generation routines that make targeting the GNOME stack simple. Vala has many other uses where native binaries are required.
     </p>
   </description>
-  <project_license>
-    LGPL-2.1-only
-  </project_license>
+  <project_license>LGPL-2.1-only</project_license>
   <url type="homepage">
     https://wiki.gnome.org/Projects/Vala/
   </url>
   <url type="bugtracker">
     https://gitlab.gnome.org/GNOME/vala/-/issues
   </url>
-  <translation/>
   <update_contact>
     lorenz@wild-fisch.de
   </update_contact>
