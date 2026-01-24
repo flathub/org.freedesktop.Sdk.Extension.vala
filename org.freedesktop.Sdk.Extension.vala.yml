@@ -41,8 +41,8 @@ modules:
         buildsystem: autotools
         sources:
           - type: archive
-            url: https://gitlab.com/graphviz/graphviz/-/archive/13.1.2/graphviz-13.1.2.tar.gz
-            sha256: 0e79b8402e8ea13f05c0fc0e30604f1d0731cd3f60f85850cedac7e0ee420ef8
+            url: https://gitlab.com/graphviz/graphviz/-/archive/14.1.2/graphviz-14.1.2.tar.gz
+            sha256: 44fb98203b4545421a2c2cbeb917a8443388838e22460e164526dda3aa28d892
             x-checker-data:
               type: anitya
               project-id: 1249
@@ -114,8 +114,8 @@ modules:
         builddir: true
         sources:
           - type: archive
-            url: https://github.com/uncrustify/uncrustify/archive/uncrustify-0.81.0.tar.gz
-            sha256: 484623dc16b92206adc6ac0770077c6c67c6e441102148c2a121a19549330ff9
+            url: https://github.com/uncrustify/uncrustify/archive/uncrustify-0.82.0.tar.gz
+            sha256: e05f8d5ee36aaa1acfa032fe97546b7be46b1f4620e7c38037f8a42e25fe676f
             x-checker-data:
               type: anitya
               project-id: 5043
