@@ -94,9 +94,6 @@ modules:
         cleanup: [/lib/pkgconfig]
       - name: gee
         buildsystem: autotools
-        build-options:
-          # GCC 14 doesn't like this libgee release
-          cflags: -Wno-error=incompatible-pointer-types
         sources:
           - type: archive
             url: https://download.gnome.org/sources/libgee/0.20/libgee-0.20.8.tar.xz
