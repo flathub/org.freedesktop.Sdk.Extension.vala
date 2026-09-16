@@ -26,8 +26,11 @@
     lorenz@wild-fisch.de
   </update_contact>
   <releases>
-    <release version="0.56.18" date="2025-03-18">
+    <release version="0.56.19" date="2026-09-16">
       <description></description>
+    </release>
+    <release version="0.56.18" date="2025-03-18">
+      <description/>
     </release>
     <release version="0.56.17" date="2024-04-19"/>
     <release version="0.56.16" date="2024-03-14"/>
